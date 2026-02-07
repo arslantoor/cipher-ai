@@ -62,7 +62,7 @@ export const InsightView: React.FC<InsightViewProps> = ({ insight, isLoading }) 
     };
 
     const getBehavioralContext = () => {
-        const { pressure_score, deviations, baseline } = behaviour_context;
+        const { pressure_score } = behaviour_context;
         const factors = pressure_score.factors;
         const observations: string[] = [];
 
@@ -90,8 +90,7 @@ export const InsightView: React.FC<InsightViewProps> = ({ insight, isLoading }) 
     };
 
     const getWhyItMatters = () => {
-        const { pressure_score } = behaviour_context;
-        const { movementType, magnitude } = market_context;
+        const { magnitude } = market_context;
 
         if (pressure_level === BehavioralPressureLevel.HIGH) {
             return 'High pressure moments often correlate with emotional trading decisions. This insight helps you recognize patterns that may impact your decision-making process.';

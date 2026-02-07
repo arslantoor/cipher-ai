@@ -103,7 +103,7 @@ const WhatsAppSettings: React.FC = () => {
         }
 
         try {
-            const res = await api.post('/settings/whatsapp', {
+            await api.post('/settings/whatsapp', {
                 number: validation.normalized,
             });
 
